@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sports Alarm</title>
+</head>
+<body>
+<p>Opening Sports Alarm…</p>
+<button id="open">Open Sports Alarm</button>
+<script>
+const params = new URLSearchParams(location.search);
+const match = params.get("match") || "";
+const target = "shortcuts://run-shortcut?name=Sports%20Alarm&input=text&text=" + encodeURIComponent(match);
+document.getElementById("open").onclick = () => location.href = target;
+location.href = target;
+</script>
+</body>
+</html>
